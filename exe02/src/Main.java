@@ -8,7 +8,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
-        
+
         // コンソールに「HelloWorld」を表示してみよう。
         main.sayHello();
         // コンソールに1～10まで足した結果を表示してみよう。
@@ -29,8 +29,7 @@ public class Main {
     }
 
     private void sumFrom1to10() {
-        for (int i = 0, sum = 0; i <= 10; i++, sum += i)
-            if (i == 10) System.out.println(sum);
+        for (int i = 0, sum = 0; i <= 10; i++, sum += i)  if (i == 10) System.out.println(sum);
     }
 
     private void askDayAfter3Years() {
