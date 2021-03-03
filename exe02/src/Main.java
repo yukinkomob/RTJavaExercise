@@ -45,9 +45,8 @@ public class Main {
      * コンソールに「3年後の今日が何曜日なのか」を計算して表示する
      */
     private void askDayAfter3Years() {
-        LocalDateTime time = LocalDateTime.now();
-        time.withYear(time.getYear() + 3);
-        DayOfWeek day = DayOfWeek.from(time);
+        LocalDateTime timeAfter3Years = LocalDateTime.now().plusYears(3);
+        DayOfWeek day = DayOfWeek.from(timeAfter3Years);
         String dayStr = switch (day) {
             case MONDAY -> "月曜日";
             case TUESDAY -> "火曜日";
