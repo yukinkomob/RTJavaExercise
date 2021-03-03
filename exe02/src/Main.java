@@ -1,9 +1,6 @@
-import java.time.DayOfWeek;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 /**
  * 2回目課題のメインクラス
@@ -46,17 +43,9 @@ public class Main {
      */
     private void askDayAfter3Years() {
         LocalDateTime timeAfter3Years = LocalDateTime.now().plusYears(3);
-        DayOfWeek day = DayOfWeek.from(timeAfter3Years);
-        String dayStr = switch (day) {
-            case MONDAY -> "月曜日";
-            case TUESDAY -> "火曜日";
-            case WEDNESDAY -> "水曜日";
-            case THURSDAY -> "木曜日";
-            case FRIDAY -> "金曜日";
-            case SATURDAY -> "土曜日";
-            case SUNDAY -> "日曜日";
-        };
-        System.out.println("3年後の今日は、" + dayStr + "です。");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E", Locale.JAPANESE);
+        String format = timeAfter3Years.format(formatter);
+        System.out.println("3年後の今日は、" + format + "曜日です。");
     }
 
     /**
